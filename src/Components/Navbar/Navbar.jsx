@@ -4,7 +4,7 @@ import cartIcon from "../Assets/cart_icon.png"
 
 const Navbar = () => {
     return (
-        <div className='navbar'>
+        <div className='navbar flex justify-around p-4 shadow-sm'>
             <div className="nav-logo">
                 <img src={logo} alt="logo" />
                 <p>SHOP-E</p>
