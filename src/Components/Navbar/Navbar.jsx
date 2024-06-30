@@ -1,8 +1,10 @@
 import './Navbar.css'
 import logo from "../Assets/logo.png"
 import cartIcon from "../Assets/cart_icon.png"
+import { useState } from 'react';
 
 const Navbar = () => {
+    const [menu, setMenu] = useState("shop")
     return (
         <div className='navbar flex justify-around p-4 shadow-sm'>
             <div className="nav-logo flex items-center gap-3">
@@ -10,18 +12,21 @@ const Navbar = () => {
                 <p className=''>SHOP-E</p>
             </div>
             <ul className="nav-menu flex items-center gap-12 text-[#626262] font-medium justify-center">
-                <li className='flex items-center justify-center gap-1 cursor-pointer flex-col'>
+                <li onClick={()=>{setMenu("shop")}} className='flex items-center justify-center gap-1 cursor-pointer flex-col'>
                     Shop
-                    <hr className='border-none w-[80%] h-1 rounded-xl bg-[#FF4141]' />
+                    {menu === "shop" ? <hr className='border-none w-[80%] h-1 rounded-xl bg-[#FF4141]' /> : <></>}
                 </li>
-                <li>
+                <li onClick={()=>{setMenu("men")}} className='flex items-center justify-center gap-1 cursor-pointer flex-col'>
                     Men
+                    {menu === "men" ? <hr className='border-none w-[80%] h-1 rounded-xl bg-[#FF4141]' /> : <></>}
                 </li>
-                <li>
+                <li onClick={()=>{setMenu("women")}} className='flex items-center justify-center gap-1 cursor-pointer flex-col'>
                     Women
+                    {menu === "women" ? <hr className='border-none w-[80%] h-1 rounded-xl bg-[#FF4141]' /> : <></>}
                 </li>
-                <li>
+                <li onClick={()=>{setMenu("kids")}} className='flex items-center justify-center gap-1 cursor-pointer flex-col'>
                     Kids
+                    {menu === "kids" ? <hr className='border-none w-[80%] h-1 rounded-xl bg-[#FF4141]' /> : <></>}
                 </li>
             </ul>
             <div className="nav-login-cart flex items-center justify-center gap-11">
